@@ -14,7 +14,9 @@ RUN pip3 install -r requirements.txt && \
 
 ENV LC_ALL="C.UTF-8"
 ENV LANG="C.UTF-8"
+ENV FLASK_RUN_PORT=8000
+ENV FLASK_APP=app
 
 EXPOSE 8000/tcp
 
-CMD ["/bin/sh", "-c", "flask db upgrade && gunicorn app:app -b 0.0.0.0:8000"]
+CMD ["/bin/sh", "-c", "flask run --host=0.0.0.0"]
