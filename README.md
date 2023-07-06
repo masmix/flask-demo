@@ -88,8 +88,44 @@ No one can appeal copyright or DMCA takedown notices. The end user is free to do
 
 # Details
 
-## Local testing 
+# Create ECR repository
+
+AWS Wizzard
+
+## Login to registry
+
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 123227712048.dkr.ecr.us-east-1.amazonaws.com
+
+## Local build
+docker build . -t flask-demo -t flask-demo:2.0.0
+
+## Run locally for a testing purpose
+docker run -dp 127.0.0.1:8000:8000 localhost/flask-demo:2.0.0
 
 
+# Retag local image
 
-docker run -dp 127.0.0.1:8000:8000 localhost/flask-demo:1.0.0
+docker tag localhost/flask-demo:2.0.0 123227712048.dkr.ecr.us-east-1.amazonaws.com/flask-demo:2.0.0
+
+# Push image to ECR
+
+docker push 123227712048.dkr.ecr.us-east-1.amazonaws.com/flask-demo:2.0.0
+
+# Publis images 2.0.1 
+
+## Local build
+docker build . -t flask-demo -t flask-demo:2.0.1
+
+## Run locally for a testing purpose
+docker run --rm -dp 127.0.0.1:8000:8000 localhost/flask-demo:2.0.1
+
+# Retag local image
+
+docker tag localhost/flask-demo:2.0.1 123227712048.dkr.ecr.us-east-1.amazonaws.com/flask-demo:2.0.1
+
+# Push image to ECR
+
+docker push 123227712048.dkr.ecr.us-east-1.amazonaws.com/flask-demo:2.0.1
+
+# Publis images 2.0.1 
+
