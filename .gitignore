@@ -114,3 +114,7 @@ dmypy.json
 .pyre/
 Pipfile
 Pipfile.lock
+
+.terraform
+.terraform.lock.hcl
+terraform.tfstate*

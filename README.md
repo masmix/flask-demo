@@ -144,3 +144,5 @@ docker tag localhost/flask-demo:2.0.2 123227712048.dkr.ecr.us-east-1.amazonaws.c
 # Push image to ECR
 
 docker push 123227712048.dkr.ecr.us-east-1.amazonaws.com/wkacz:2.0.2
+
+
