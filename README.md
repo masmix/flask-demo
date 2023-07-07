@@ -121,11 +121,26 @@ docker run --rm -dp 127.0.0.1:8000:8000 localhost/flask-demo:2.0.1
 
 # Retag local image
 
-docker tag localhost/flask-demo:2.0.1 123227712048.dkr.ecr.us-east-1.amazonaws.com/flask-demo:2.0.1
+docker tag localhost/flask-demo:2.0.1 123227712048.dkr.ecr.us-east-1.amazonaws.com/wkacz:2.0.1
 
 # Push image to ECR
 
-docker push 123227712048.dkr.ecr.us-east-1.amazonaws.com/flask-demo:2.0.1
+docker push 123227712048.dkr.ecr.us-east-1.amazonaws.com/wkacz:2.0.1
 
-# Publis images 2.0.1 
+# Publis images 2.0.2
 
+## Code update
+
+## Local build
+docker build . -t flask-demo -t flask-demo:2.0.2
+
+## Run locally for a testing purpose
+docker run --rm -dp 127.0.0.1:8000:8000 localhost/flask-demo:2.0.2
+
+# Retag local image
+
+docker tag localhost/flask-demo:2.0.2 123227712048.dkr.ecr.us-east-1.amazonaws.com/wkacz:2.0.2
+
+# Push image to ECR
+
+docker push 123227712048.dkr.ecr.us-east-1.amazonaws.com/wkacz:2.0.2

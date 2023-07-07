@@ -10,4 +10,4 @@ from app import app
 @app.route("/")
 @app.route("/<name>")
 def index(name='Anonymous'):
-    return f"Version v2.0.1 Hello {name}!!"
+    return f"Version v2.0.2 Hello {name}!!"
