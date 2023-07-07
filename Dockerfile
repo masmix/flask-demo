@@ -2,7 +2,7 @@ FROM ubuntu
 
 RUN apt-get update && \
     apt-get -y upgrade && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -yq libpq-dev gcc python3.10 python3-pip && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -yq libpq-dev gcc python3.10 python3-pip net-tools curl && \
     apt-get clean
 
 WORKDIR /app
